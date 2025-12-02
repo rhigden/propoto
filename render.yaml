@@ -1,0 +1,28 @@
+# Render Blueprint for Propoto
+# This file should be in the root of the repository for Blueprint deployment
+
+services:
+  - type: web
+    name: propoto-api
+    env: python
+    rootDir: propoto/api
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: AGENT_SERVICE_KEY
+        sync: false
+      - key: EXA_API_KEY
+        sync: false
+      - key: FIRECRAWL_API_KEY
+        sync: false
+      - key: NEXT_PUBLIC_CONVEX_URL
+        value: https://giddy-jaguar-382.convex.cloud
+      - key: CONVEX_DEPLOYMENT
+        value: prod:giddy-jaguar-382
+      - key: CORS_ORIGINS
+        sync: false
+      - key: PORT
+        value: 8000
+
