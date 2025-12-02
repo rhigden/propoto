@@ -1,0 +1,27 @@
+[tool.pyright]
+include = ["**/*.py"]
+exclude = [
+    "**/__pycache__",
+    "**/node_modules",
+    "**/.pytest_cache",
+    "**/venv",
+    "**/.venv"
+]
+venvPath = "."
+venv = "venv"
+pythonVersion = "3.12"
+pythonPlatform = "Linux"
+typeCheckingMode = "basic"
+reportMissingImports = "warning"
+reportMissingTypeStubs = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+
+
+

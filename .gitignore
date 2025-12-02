@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+venv/
+env/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables
+.env
+.env.local
+.env*.local
+*.env
+
+# Build outputs
+.next/
+dist/
+build/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+coverage/
+test_report.html
+test-reports/
+
+# Convex
+convex/_generated/
+
+# Docker
+.dockerignore
+
+# Temporary files
+*.tmp
+*.temp
+
