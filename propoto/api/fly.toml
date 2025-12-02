@@ -1,0 +1,25 @@
+# Fly.io configuration for Propoto API
+app = "propoto-api"
+primary_region = "iad"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "8000"
+  NEXT_PUBLIC_CONVEX_URL = "https://giddy-jaguar-382.convex.cloud"
+  CONVEX_DEPLOYMENT = "prod:giddy-jaguar-382"
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 256
+
